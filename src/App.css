@@ -1,42 +1,71 @@
+:root {
+  --olive-bg: #6c755a; /* Оливковый для темных блоков */
+  --champagne-bg: #f0e9dc; /* Шампань для светлых блоков */
+  --text-dark: #4a4e4d; /* Темный текст для шампани */
+  --text-light: #f0e9dc; /* Светлый текст для оливы */
+  --accent-gold: #c08261; /* Акцентный цвет для имен и деталей */
+}
+
 body {
-  background-color: #f0e9dc;
-  font-family: 'serif';
+  margin: 0;
+  background-color: var(--champagne-bg);
+  font-family:
+    'Times New Roman', serif; /* Для эффекта классической полиграфии */
 }
 
-.invitation-card {
+.section-header {
+  background-color: var(--champagne-bg);
+  min-height: 100vh; /* Чтобы блок занимал весь экран при открытии */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px 20px;
+  color: var(--text-dark);
+}
+
+/* Стили для текста один в один как на картинке */
+.header-top-text {
+  letter-spacing: 4px;
+  font-size: 0.9rem;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+}
+
+.monogram-wrapper {
+  width: 100px; /* Увеличим немного размер для PNG */
+  height: 100px;
+  margin-bottom: 40px; /* Уменьшим отступ, так как венок сам по себе объемный */
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border: none;
-  border-radius: 20px;
-  overflow: hidden;
-  background-color: #f8f3e9;
+  background: none;
 }
 
-.invitation-header {
-  padding: 30px 20px;
+.monogram-img-png {
+  width: 200%;
+  height: 200%;
+  object-fit: contain; /* Чтобы венок не искажался */
 }
-.d-logo {
-  color: #c08261;
-  font-weight: 200;
-}
-.i-title {
-  text-transform: uppercase;
+
+.header-names {
+  font-size: 2.5rem;
   letter-spacing: 2px;
-}
-
-.invitation-details {
-  background-color: #6c755a;
-  color: #f0e9dc;
-  border-radius: 20px;
-}
-.text-details {
   text-transform: uppercase;
-  font-size: 0.8rem;
-  letter-spacing: 1px;
+  margin-bottom: 20px;
+  line-height: 1.2;
 }
 
-.btn-confirm {
-  background-color: #c08261 !important;
-  border: none !important;
-  border-radius: 10px !important;
-  text-transform: uppercase !important;
-  padding: 12px !important;
+.header-subtext {
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  max-width: 300px;
+  margin-bottom: 50px;
+}
+
+.header-date {
+  font-size: 3rem;
+  font-weight: 300;
 }

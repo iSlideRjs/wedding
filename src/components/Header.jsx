@@ -1,11 +1,36 @@
-import { Container } from 'react-bootstrap';
+import da from '../assets/da.png';
 
 function Header() {
   return (
-    <Container className="text-center mt-5 mb-4">
-      <h1 className="display-4 text-success">Дмитрий & Александра</h1>
-      <p className="lead">Приглашаем разделить с нами этот особенный день!</p>
-    </Container>
+    <section className="section-header">
+      {/* Верхняя надпись */}
+      <div className="header-top-text">ПРИГЛАШЕНИЕ НА СВАДЬБУ</div>
+
+      {/* Монограмма */}
+      <div className="monogram-wrapper">
+        <img src={da} alt="Монограмма Д & А" className="monogram-img-png" />
+      </div>
+
+      {/* Имена */}
+      <div className="header-names">
+        DMITRIY
+        <br />
+        ALEKSANDRA
+      </div>
+
+      {/* Подстрочник */}
+      <div className="header-subtext">
+        БУДЕМ СЧАСТЛИВЫ ВИДЕТЬ ВАС НА НАШЕМ СВАДЕБНОМ ТОРЖЕСТВЕ!
+      </div>
+
+      {/* Дата — поставим твой май 2026 */}
+      <div className="header-date">04.07.26</div>
+
+      {/* Маленький разделитель снизу (кольца или бесконечность) */}
+      <div style={{ marginTop: '30px', color: '#C08261', fontSize: '1.5rem' }}>
+        ∞
+      </div>
+    </section>
   );
 }
 
