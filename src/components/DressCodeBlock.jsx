@@ -2,7 +2,7 @@ import { Container } from 'react-bootstrap';
 
 function DressCodeBlock() {
   // Палитра: Оливковый, Шалфей, Бронза, Песочный, Беж, Камень
-  const colors = ['olive', 'sage', 'bronze', 'sand', 'orange', 'stone'];
+  const colors = ['oliva', 'brown', 'blue', 'grey', 'gold', 'indigo'];
 
   return (
     <section className="section-dresscode">

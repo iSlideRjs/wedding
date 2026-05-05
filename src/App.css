@@ -449,41 +449,41 @@ body {
 }
 
 .color-circle:hover {
-  transform: scale(1.1); /* Легкий интерактив при наведении */
+  transform: scale(2); /* Легкий интерактив при наведении */
 }
 
 /* ЦВЕТА ПАЛИТРЫ */
-.color-circle.olive {
-  background-image: url('./assets/oliv.png');
+.color-circle.oliva {
+  background-image: url('./assets/oliva.png');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 } /* Тот самый оливковый из 4 блока */
-.color-circle.sage {
+.color-circle.brown {
   background-image: url('./assets/brown.png');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 } /* Нежный шалфей */
-.color-circle.bronze {
+.color-circle.blue {
   background-image: url('./assets/blue.png');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 } /* Приглушенная бронза под скетч */
-.color-circle.sand {
+.color-circle.grey {
   background-image: url('./assets/grey.png');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 } /* Теплый песочный */
-.color-circle.orange {
-  background-image: url('./assets/golds.png');
+.color-circle.gold {
+  background-image: url('./assets/gold.png');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 } /* Насыщенный беж (чуть темнее фона) */
-.color-circle.stone {
+.color-circle.indigo {
   background-image: url('./assets/indigo.png');
   background-repeat: no-repeat;
   background-size: cover;
