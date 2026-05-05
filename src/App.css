@@ -213,15 +213,22 @@ body {
   /* Размеры и отступы */
   padding: 16px 45px;
   font-size: 0.85rem;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.2s ease; /* Ускоряем переход для отзывчивости */
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 }
-
 .btn-map:hover {
-  /* Эффект при наведении */
   background-color: #4a4e4d !important;
-  color: var(--champagne-bg) !important;
+  color: #f0e9dc !important; /* Твой цвет фона */
   border-color: #4a4e4d !important;
 }
+
+.btn-map:active {
+  background-color: #4a4e4d !important; /* Чуть светлее черного, чтобы было видно нажатие */
+  color: #f0e9dc !important;
+  transform: scale(0.97); /* Кнопка слегка "вдавливается" при нажатии */
+}
+
 .location-design-title {
   display: flex;
   flex-direction: column;
@@ -262,24 +269,16 @@ body {
   justify-content: center;
 }
 
-/* Сама картинка */
 .location-sketch {
   width: 100%;
-  /* Увеличиваем до 900px или даже 1000px для компьютеров */
   max-width: 650px;
   height: auto;
   display: block;
-  /* Эффект смешивания (опционально) */
-  /* Если у картинки белый фон, а сайт цвета шампань, эта строчка 
-     уберет белый фон и сделает скетч прозрачным: */
-
-  /* Легкая тень или рамка (по желанию, но скетчи обычно без них) */
-  border-radius: 70px;
+  border-radius: 30px;
 }
 
-/* Медиа-запрос для очень маленьких экранов (iPhone SE и т.д.) */
 @media (max-width: 400px) {
   .location-sketch {
-    max-width: 90%; /* Делаем небольшие отступы по бокам на телефоне */
+    max-width: 90%;
   }
 }
