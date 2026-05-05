@@ -37,7 +37,6 @@ function GuestBlock() {
   return (
     <section className="section-olive">
       <div className="guest-content">
-        {/* Заголовок в каллиграфическом стиле */}
         <h2 className="cursive-title">Дорогие гости!</h2>
 
         {/* Основной текст приглашения */}
@@ -53,7 +52,7 @@ function GuestBlock() {
 
         {/* Заготовка под календарь — сделаем его следующим шагом */}
         <div className="calendar-placeholder">
-          <h3 className="month-title">июль</h3>
+          <h3 className="month-title">Июль</h3>
 
           <div className="calendar-grid">
             {['пн', 'вт', 'ср', 'чт', 'пт', 'сб', 'вс'].map((d) => (

@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
 :root {
   --olive-bg: #6c755a; /* Оливковый для темных блоков */
   --champagne-bg: #f0e9dc; /* Шампань для светлых блоков */
@@ -87,11 +90,11 @@ body {
 }
 
 .cursive-title {
-  font-family: 'Georgia', serif; /* Или любой рукописный шрифт */
-  font-style: italic;
-  font-size: 2.5rem;
-  margin-bottom: 40px;
+  font-family: 'Great Vibes', cursive;
   font-weight: 400;
+  font-style: normal;
+  font-size: 3rem;
+  margin-bottom: 40px;
 }
 
 .guest-text-wrapper {
@@ -107,11 +110,11 @@ body {
 }
 
 .month-title {
-  font-family: 'Georgia', serif;
-  font-style: italic;
-  font-size: 2rem;
-  margin-bottom: 20px;
+  font-family: 'Great Vibes', cursive;
   font-weight: 400;
+  font-style: normal;
+  font-size: 3rem;
+  margin-bottom: 20px;
 }
 /* Контейнер календаря */
 .calendar-container {
@@ -153,4 +156,130 @@ body {
   width: 30px;
   height: 30px;
   margin: 0 auto;
+}
+
+.bottom-infinity {
+  font-family: 'Noto Sans TC', sans-serif !important;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 10px 0;
+  color: var(--accent-gold);
+  font-size: 1.2rem;
+}
+.section-location {
+  background-color: var(--champagne-bg); /* Тот самый светлый оттенок */
+  padding: 100px 0;
+  text-align: center;
+  color: var(--text-dark);
+}
+
+.location-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.venue-name {
+  font-family: 'Times New Roman', serif;
+  font-size: 1.8rem;
+  letter-spacing: 4px;
+  margin-top: 30px;
+  text-transform: uppercase;
+}
+
+.venue-address {
+  font-family: 'Times New Roman', serif;
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  margin-bottom: 50px;
+  opacity: 0.8;
+}
+
+.btn-map {
+  /* Шрифт как мы обсуждали — строгий и классический */
+  font-family: 'Times New Roman', Times, serif !important;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: 600; /* Делаем сам текст чуть жирнее */
+
+  /* Настройка рамки */
+  border: 1px solid #4a4e4d !important; /* Увеличили толщину до 2px */
+  background-color: transparent;
+  color: #4a4e4d;
+
+  /* Закругление краев */
+  border-radius: 10px !important; /* Совсем немного, чтобы убрать остроту */
+
+  /* Размеры и отступы */
+  padding: 16px 45px;
+  font-size: 0.85rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-map:hover {
+  /* Эффект при наведении */
+  background-color: #4a4e4d !important;
+  color: var(--champagne-bg) !important;
+  border-color: #4a4e4d !important;
+}
+.location-design-title {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 650px; /* Ограничиваем ширину, чтобы смещение было заметным */
+  margin: 0 auto 40px; /* Центрируем весь блок и даем отступ до адреса */
+}
+
+/* СЛОВО "МЕСТО" (вверху слева) */
+.text-place {
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+  font-size: 3rem;
+  letter-spacing: 10px; /* Широкое расстояние между буквами */
+  align-self: center;
+  text-transform: uppercase;
+}
+
+/* СЛОВО "проведения" (под ним и справа) */
+.text-conducting {
+  font-family: 'Great Vibes', cursive;
+  font-size: 3.5rem;
+  font-weight: 400;
+  align-self: flex-end; /* Уводим вправо */
+  margin-right: 20%; /* Небольшой отступ от правого края */
+  margin-top: -30px; /* Накладываем на верхнее слово */
+  line-height: 1;
+}
+
+/* Если на телефоне слова слишком далеко друг от друга, 
+   можно уменьшить max-width у .location-design-title */
+/* Контейнер для картинки задает отступы */
+.location-image-wrapper {
+  width: 100%;
+  margin: 0 0 40px 0; /* Отступ сверху от адреса и снизу до кнопки */
+
+  display: flex;
+  justify-content: center;
+}
+
+/* Сама картинка */
+.location-sketch {
+  width: 100%;
+  /* Увеличиваем до 900px или даже 1000px для компьютеров */
+  max-width: 650px;
+  height: auto;
+  display: block;
+  /* Эффект смешивания (опционально) */
+  /* Если у картинки белый фон, а сайт цвета шампань, эта строчка 
+     уберет белый фон и сделает скетч прозрачным: */
+
+  /* Легкая тень или рамка (по желанию, но скетчи обычно без них) */
+  border-radius: 70px;
+}
+
+/* Медиа-запрос для очень маленьких экранов (iPhone SE и т.д.) */
+@media (max-width: 400px) {
+  .location-sketch {
+    max-width: 90%; /* Делаем небольшие отступы по бокам на телефоне */
+  }
 }
