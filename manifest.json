@@ -1,0 +1,15 @@
+{
+  "short_name": "D&A Wedding",
+  "name": "Свадьба Дмитрия и Александры",
+  "icons": [
+    {
+      "src": "apple-touch-icon.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#f0e9dc",
+  "background_color": "#f0e9dc"
+}
