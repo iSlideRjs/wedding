@@ -454,24 +454,47 @@ body {
 
 /* ЦВЕТА ПАЛИТРЫ */
 .color-circle.olive {
-  background-color: #556b2f;
+  background-image: url('./assets/oliv.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 } /* Тот самый оливковый из 4 блока */
 .color-circle.sage {
-  background-color: #8d0e0a;
+  background-image: url('./assets/brown.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 } /* Нежный шалфей */
 .color-circle.bronze {
-  background-color: #a67c52;
+  background-image: url('./assets/blue.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 } /* Приглушенная бронза под скетч */
 .color-circle.sand {
-  background-color: #d5d6e6;
+  background-image: url('./assets/grey.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 } /* Теплый песочный */
-.color-circle.beige {
-  background-color: #ce8a0c;
+.color-circle.orange {
+  background-image: url('./assets/golds.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 } /* Насыщенный беж (чуть темнее фона) */
 .color-circle.stone {
-  background-color: #7a7a7a;
+  background-image: url('./assets/indigo.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 } /* Благородный серый камень для баланса */
-
+.color-circle.spider {
+  background-image: url('./assets/marvel.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+} /* Благородный серый камень для баланса */
 /* Разделитель между блоками */
 .dress-divider-wrapper {
   display: flex;

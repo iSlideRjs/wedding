@@ -2,7 +2,7 @@ import { Container } from 'react-bootstrap';
 
 function DressCodeBlock() {
   // Палитра: Оливковый, Шалфей, Бронза, Песочный, Беж, Камень
-  const colors = ['olive', 'sage', 'bronze', 'sand', 'beige', 'stone'];
+  const colors = ['olive', 'sage', 'bronze', 'sand', 'orange', 'stone'];
 
   return (
     <section className="section-dresscode">
@@ -26,7 +26,12 @@ function DressCodeBlock() {
             ))}
           </div>
         </div>
-
+        <p className="dress-description">АЛЬТЕРНАТИВНЫЙ СТИЛЬ</p>
+        <div className="color-palette">
+          <div className="color-circle-wrapper">
+            <div className="color-circle spider"></div>
+          </div>
+        </div>
         <div className="dress-divider-wrapper">
           <hr className="dress-divider" />
         </div>
