@@ -494,6 +494,12 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+}
+.color-circle.venom {
+  background-image: url('./assets/venom.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 } /* Благородный серый камень для баланса */
 /* Разделитель между блоками */
 .dress-divider-wrapper {
@@ -506,4 +512,136 @@ body {
   width: 60px;
   border-top: 1px solid #1a1a1a;
   opacity: 0.2;
+}
+
+.section-rsvp-final {
+  background-color: #6c755a; /* Оливковый */
+  padding: 50px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Контейнер для центрирования контента */
+.rsvp-card {
+  text-align: center;
+  color: #c5a059; /* Золотой оттенок */
+  max-width: 500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 60px; /* Расстояние между тремя основными частями */
+}
+
+/* Орнамент между именами и датой */
+.rsvp-ornament {
+  margin: 15px 0;
+  font-size: 1.5rem;
+  opacity: 0.8;
+}
+
+/* Блок с датой и линиями */
+.rsvp-date-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 10px;
+}
+
+.date-line {
+  width: 60px;
+  border: none;
+  border-top: 1px solid #c5a059;
+  opacity: 0.5;
+  margin: 0;
+}
+
+.rsvp-date {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.8rem;
+  margin: 0;
+  line-height: 1;
+}
+
+/* Главный заголовок */
+.rsvp-main-text {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  line-height: 1.3;
+  font-weight: 400;
+  margin: 0;
+  letter-spacing: 3px;
+  color: #f0e9dc;
+}
+
+/* Текст над кнопкой */
+.rsvp-subtitle {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.75rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 25px;
+  opacity: 0.9;
+  color: #f0e9dc;
+}
+
+/* Кнопка "ЗАПОЛНИТЬ АНКЕТУ" */
+.btn-form {
+  background-color: transparent;
+  border: 1px solid #f0e9dc;
+  border-radius: 10px;
+  color: #f0e9dc;
+  padding: 18px 40px;
+  font-family: 'Playfair Display', serif;
+  font-size: 0.9rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  max-width: 350px;
+}
+
+/* Эффекты для кнопки */
+@media (hover: hover) {
+  .btn-form:hover {
+    background-color: #6d7262;
+  }
+}
+
+.btn-form:active {
+  transform: scale(0.97);
+  background-color: #f0e9dc;
+  color: #6c755a;
+}
+
+/* Адаптация под мобильные экраны */
+@media (max-width: 768px) {
+  .rsvp-main-text {
+    font-size: 2rem;
+  }
+  .rsvp-date {
+    font-size: 2.2rem;
+  }
+  .date-line {
+    width: 40px;
+  }
+  .section-rsvp-final {
+    padding: 80px 20px;
+  }
+}
+/* Контейнер для SVG */
+.rsvp-names-curved {
+  width: 100%;
+  max-width: 300px; /* Ограничиваем ширину, чтобы дуга не разъезжалась */
+  margin: 0 auto;
+  height: 60px;
+}
+
+/* Стили для самого текста внутри SVG */
+.curved-text {
+  font-family: 'Playfair Display', serif;
+  font-size: 16px;
+  letter-spacing: 2px;
 }

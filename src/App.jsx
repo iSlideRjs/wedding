@@ -5,6 +5,7 @@ import GuestBlock from './components/GuestBlock';
 import LocationBlock from './components/LocationBlock';
 import TimingBlock from './components/TimingBlock';
 import DressCodeBlock from './components/DressCodeBlock';
+import RsvpBlock from './components/RsvpBlock';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <LocationBlock />
       <TimingBlock />
       <DressCodeBlock />
+      <RsvpBlock />
     </div>
   );
 }

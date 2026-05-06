@@ -31,6 +31,9 @@ function DressCodeBlock() {
           <div className="color-circle-wrapper">
             <div className="color-circle spider"></div>
           </div>
+          <div className="color-circle-wrapper">
+            <div className="color-circle venom"></div>
+          </div>
         </div>
         <div className="dress-divider-wrapper">
           <hr className="dress-divider" />
