@@ -55,7 +55,7 @@ function RsvpBlock() {
             <button
               onClick={() =>
                 window.open(
-                  'https://tgkbnkzi.forms.app/dimasasha-wedding',
+                  'https://forms.yandex.ru/u/69fba43a6d2d7300194df5d7/',
                   '_blank',
                 )
               }
