@@ -12,7 +12,7 @@ function RsvpBlock() {
                 {/* Невидимая дуга (квадратичная кривая Безье) */}
                 <path
                   id="name-curve"
-                  d="M 20 50 Q 150 3 280 50"
+                  d="M 25 50 Q 150 3 280 50"
                   fill="transparent"
                 />
 
