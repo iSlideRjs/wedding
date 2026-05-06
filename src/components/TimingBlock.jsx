@@ -3,10 +3,10 @@ import { Container } from 'react-bootstrap';
 function TimingBlock() {
   const events = [
     {
-      time: '12:00',
+      time: '12:30',
       title: 'ЦЕРЕМОНИЯ БРАКОСОЧЕТАНИЯ',
     },
-    { time: '14:00', title: 'ПОЕЗДКИ', desc: '' },
+    { time: '13:00', title: 'ФОТОСЕССИЯ ПО ГОРОДУ', desc: '' },
     {
       time: '17:00',
       title: 'СБОР, ФОТОСЕССИЯ, ПОЗДРАВЛЕНИЯ',
@@ -14,11 +14,11 @@ function TimingBlock() {
     },
     { time: '17:30', title: 'ПРАЗДНИЧНЫЙ УЖИН', desc: '' },
 
-    { time: '21:00', title: 'ТОРТ', desc: 'ВЫКУП ПЕРВОГО КУСКА' },
+    { time: '21:00', title: 'ВЫНОС ТОРТА', desc: 'ВЫКУП ПЕРВОГО КУСКА' },
     {
       time: '23:00',
-      title: 'ЗАВЕРШЕНИЕ',
-      desc: 'НО КТО ХОЧЕТ МОЖЕТ ПРОДОЛЖИТЬ С НАМИ',
+      title: 'ЗАВЕРШЕНИЕ ВЕЧЕРА',
+      desc: 'ИЛИ НЕТ?',
     },
   ];
 
