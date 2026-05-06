@@ -26,7 +26,9 @@ function DressCodeBlock() {
             ))}
           </div>
         </div>
-        <p className="dress-description">АЛЬТЕРНАТИВНЫЙ СТИЛЬ</p>
+        <p className="dress-description">
+          АЛЬТЕРНАТИВНЫЙ СТИЛЬ ДЛЯ САМЫХ СМЕЛЫХ
+        </p>
         <div className="color-palette">
           <div className="color-circle-wrapper">
             <div className="color-circle spider"></div>
