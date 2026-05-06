@@ -525,7 +525,7 @@ body {
 /* Контейнер для центрирования контента */
 .rsvp-card {
   text-align: center;
-  color: #c5a059; /* Золотой оттенок */
+  color: #e6c27a; /* Золотой оттенок */
   max-width: 500px;
   margin: 0 auto;
   display: flex;
@@ -552,7 +552,7 @@ body {
 .date-line {
   width: 60px;
   border: none;
-  border-top: 1px solid #c5a059;
+  border-top: 1px solid #e6c27a;
   opacity: 0.5;
   margin: 0;
 }
@@ -619,16 +619,16 @@ body {
 /* Адаптация под мобильные экраны */
 @media (max-width: 768px) {
   .rsvp-main-text {
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
   .rsvp-date {
-    font-size: 2.2rem;
+    font-size: 3rem;
   }
   .date-line {
     width: 40px;
   }
   .section-rsvp-final {
-    padding: 80px 20px;
+    padding: 50px 20px;
   }
 }
 /* Контейнер для SVG */
