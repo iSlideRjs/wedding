@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Upright:wght@300;400;500;600;700&display=swap');
 
 :root {
   --olive-bg: #6c755a; /* Оливковый для темных блоков */
@@ -641,7 +642,9 @@ body {
 
 /* Стили для самого текста внутри SVG */
 .curved-text {
-  font-family: 'Playfair Display', serif;
-  font-size: 16px;
+  font-family: 'Cormorant Upright', serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 20px;
   letter-spacing: 2px;
 }

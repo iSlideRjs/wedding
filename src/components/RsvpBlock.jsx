@@ -51,9 +51,7 @@ function RsvpBlock() {
           </div>
 
           <div className="rsvp-bottom">
-            <p className="rsvp-subtitle">
-              ПРОСИМ ОТВЕТИТЬ ВАС НА ПАРУ ВОПРОСОВ
-            </p>
+            <p className="rsvp-subtitle">ПРОСИМ ОТВЕТИТЬ НА ПАРУ ВОПРОСОВ</p>
             <button
               onClick={() =>
                 window.open(
