@@ -2,7 +2,7 @@ import { Button, Container } from 'react-bootstrap';
 import place from '../assets/place.jpg';
 
 function LocationBlock() {
-  const mapUrl = 'https://yandex.ru/maps/-/CPWKqO8H';
+  const mapUrl = 'https://yandex.ru/maps/-/CPcYyVIW';
 
   return (
     <section className="section-location">
