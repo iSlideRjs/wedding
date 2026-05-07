@@ -104,10 +104,11 @@ body {
 }
 
 .guest-text {
+  font-family: 'Playfair Display', serif;
   font-size: 0.85rem;
-  line-height: 2;
   letter-spacing: 2px;
-  text-transform: uppercase;
+  max-width: 450px;
+  line-height: 1.8;
   margin-bottom: 25px;
 }
 
@@ -279,80 +280,517 @@ body {
     max-width: 90%;
   }
 }
-.section-timing {
-  background-color: var(--olive-bg);
-  color: var(--text-light);
+/* --- Основные стили блока (Оливковый фон) --- */
+.section-timing-final {
+  background-color: #6c755a; /* Оливковый */
+  color: #f0e9dc; /* Шампань для текста */
   padding: 100px 20px;
-  text-align: center;
 }
 
-/* Композиция заголовка: ПРОГРАММА торжества */
+/* --- Заголовок (уже классика) --- */
 .timing-title-wrapper {
-  margin-bottom: 40px;
+  position: relative;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: center;
+  margin-bottom: 80px;
 }
-
-.timing-main-title {
-  font-family: 'Playfair Display', serif;
-  font-size: 2.5rem;
-  letter-spacing: 8px;
-  font-weight: 400;
-  margin: 0;
-  text-transform: uppercase;
-  align-self: center;
-  color: var(--text-light);
-}
-
-.timing-sub-title {
-  font-family: 'Great Vibes', cursive;
-  font-size: 3rem;
-  display: block;
-  margin-top: -30px; /* Эффект наложения, как на фото */
-  font-weight: 400;
-  align-self: flex-end;
-  margin-right: 35%;
-}
-
-@media (max-width: 510px) {
-  .timing-sub-title {
-    margin-right: 10%;
-  }
-}
-.timeline {
-  max-width: 600px;
-  margin: 0 auto;
-}
-/* Список событий тайминга */
-.timeline-item {
-  margin-bottom: 50px;
-}
-
-.time-value {
-  font-family: 'Playfair Display', serif;
-  font-size: 3rem;
-  font-weight: 400;
-  margin-bottom: 15px;
-}
-
-.event-title {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.1rem;
-  letter-spacing: 3px;
-  font-weight: 700;
-  margin-bottom: 10px;
-  text-transform: uppercase;
-}
-
 .event-desc {
   font-family: 'Playfair Display', serif;
-  font-size: 0.8rem;
+  font-size: 0.55rem;
   letter-spacing: 1px;
   opacity: 0.8;
-  max-width: 320px;
+}
+.timing-main-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.2rem;
+  letter-spacing: 8px;
+  margin: 0;
+  text-transform: uppercase;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  color: #f0e9dc;
+  /* Увеличили отступ снизу, чтобы освободить место для рукописного текста */
+}
+.timing-sub-title {
+  font-family: 'Great Vibes', cursive;
+  font-size: 4rem;
+  position: absolute;
+  right: 55%;
+  transform: translateX(100%);
+  /* ОПУСКАЕМ ТЕКСТ НИЖЕ (было -30px, стало -50px) */
+  bottom: -55px;
+  white-space: nowrap;
+}
+
+/* --- Контейнер последовательного тайминга --- */
+.timeline-sequential {
+  position: relative;
+  max-width: 600px;
   margin: 0 auto;
-  line-height: 1.6;
+  /* Высота контейнера = 7 пунктов * 120px высоты ряда = 840px */
+  height: 840px;
+}
+
+/* Центральный золотой стержень (чистая линия) */
+.timeline-spine {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px; /* Чуть толще, чтобы выглядела как стержень */
+  background-color: #e6c27a; /* Золотой */
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+/* --- ЕДИНСТВЕННОЕ БЕГУЩЕЕ СЕРДЦЕ (РУННЕР) --- */
+.sequential-runner {
+  position: absolute;
+  left: 50%;
+  margin-left: -15px;
+  margin-top: -15px;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 1;
+  color: #e6c27a;
+  font-size: 1.6rem;
+  z-index: 3;
+  transform-origin: center center;
+
+  /* Подключаем анимацию сразу ко всем сердечкам навсегда... */
+  animation: runStopScale 12s infinite linear;
+
+  /* ...НО по умолчанию ставим её на ПАУЗУ */
+  animation-play-state: paused;
+}
+
+/* --- СНИМАЕМ С ПАУЗЫ ПРИ ПОЯВЛЕНИИ НА ЭКРАНЕ --- */
+.animate-on-scroll .sequential-runner {
+  /* Как только добавился класс, сердце продолжает бежать с того же места */
+  animation-play-state: running;
+}
+/* --- МАГИЯ АНИМАЦИИ: Движение -> Стоп -> Увеличение -> Движение --- */
+/* Мы делим 100% времени анимации (18с) на 7 этапов + паузы */
+@keyframes runStopScale {
+  0% {
+    top: 0px;
+    transform: scale(1);
+    color: #e6c27a;
+    text-shadow: none;
+  }
+
+  /* ПУНКТ 1 */
+  4% {
+    top: 60px;
+    transform: scale(1);
+    color: #e6c27a;
+    text-shadow: none;
+  }
+  6% {
+    top: 60px;
+    transform: scale(3);
+    color: #f0e9dc;
+    text-shadow: 0 0 15px #f0e9dc;
+  }
+  9% {
+    top: 60px;
+    transform: scale(1);
+    color: #e6c27a;
+    text-shadow: none;
+  }
+
+  /* ПУНКТ 2 */
+  17% {
+    top: 180px;
+    transform: scale(1);
+    color: #e6c27a;
+    text-shadow: none;
+  }
+  19% {
+    top: 180px;
+    transform: scale(2);
+    color: #f0e9dc;
+    text-shadow: 0 0 15px #f0e9dc;
+  }
+  22% {
+    top: 180px;
+    transform: scale(1);
+    color: #e6c27a;
+    text-shadow: none;
+  }
+
+  /* ПУНКТ 3 */
+  31% {
+    top: 300px;
+    transform: scale(1);
+    color: #e6c27a;
+    text-shadow: none;
+  }
+  33% {
+    top: 300px;
+    transform: scale(2);
+    color: #f0e9dc;
+    text-shadow: 0 0 15px #f0e9dc;
+  }
+  36% {
+    top: 300px;
+    transform: scale(1);
+    color: #e6c27a;
+    text-shadow: none;
+  }
+
+  /* ПУНКТ 4 */
+  44% {
+    top: 420px;
+    transform: scale(1);
+    color: #e6c27a;
+    text-shadow: none;
+  }
+  46% {
+    top: 420px;
+    transform: scale(2);
+    color: #f0e9dc;
+    text-shadow: 0 0 15px #f0e9dc;
+  }
+  49% {
+    top: 420px;
+    transform: scale(1);
+    color: #e6c27a;
+    text-shadow: none;
+  }
+
+  /* ПУНКТ 5 */
+  57% {
+    top: 540px;
+    transform: scale(1);
+    color: #e6c27a;
+    text-shadow: none;
+  }
+  59% {
+    top: 540px;
+    transform: scale(2);
+    color: #f0e9dc;
+    text-shadow: 0 0 15px #f0e9dc;
+  }
+  62% {
+    top: 540px;
+    transform: scale(1);
+    color: #e6c27a;
+    text-shadow: none;
+  }
+
+  /* ПУНКТ 6 */
+  70% {
+    top: 660px;
+    transform: scale(1);
+    color: #e6c27a;
+    text-shadow: none;
+  }
+  72% {
+    top: 660px;
+    transform: scale(2);
+    color: #f0e9dc;
+    text-shadow: 0 0 15px #f0e9dc;
+  }
+  75% {
+    top: 660px;
+    transform: scale(1);
+    color: #e6c27a;
+    text-shadow: none;
+  }
+
+  /* ПУНКТ 7 */
+  84% {
+    top: 780px;
+    transform: scale(1);
+    color: #e6c27a;
+    text-shadow: none;
+  }
+  86% {
+    top: 780px;
+    transform: scale(2);
+    color: #f0e9dc;
+    text-shadow: 0 0 15px #f0e9dc;
+  }
+  89% {
+    top: 780px;
+    transform: scale(1);
+    color: #e6c27a;
+    text-shadow: none;
+  }
+
+  /* ФИНАЛ */
+  95% {
+    opacity: 1;
+  }
+  100% {
+    top: 840px;
+    opacity: 0;
+    transform: scale(1);
+  }
+}
+
+/* --- Настройки Рядов Событий (Чередование) --- */
+.timeline-row-fixed {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 120px; /* КРИТИЧЕСКИ ВАЖНАЯ ЖЕСТКАЯ ВЫСОТА РЯДА */
+  position: relative;
+  z-index: 2;
+}
+
+/* Контент слева/справа */
+.timeline-row-fixed.left-side {
+  flex-direction: row;
+}
+.timeline-row-fixed.right-side {
+  flex-direction: row-reverse;
+}
+
+/* Настройки текста */
+.timeline-content {
+  width: 50%;
+}
+
+/* Текст слева: выравниваем по правому краю, ближе к стержню */
+.timeline-row-fixed.left-side .timeline-content {
+  text-align: right;
+  padding-right: 35px; /* Отступ до золотого стержня */
+}
+
+/* Текст справа: выравниваем по левому краю */
+.timeline-row-fixed.right-side .timeline-content {
+  text-align: left;
+  padding-left: 35px;
+}
+
+.timeline-time {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  color: #e6c27a; /* Время золотое */
+  margin-bottom: 3px;
+  display: block;
+  letter-spacing: 2px;
+}
+
+.timeline-title {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.3rem; /* Крупный рукописный шрифт */
+  line-height: 0.9;
+  display: block;
+}
+
+.timeline-empty {
+  width: 50%; /* Для баланса flex-box */
+}
+
+/* --- Адаптация под мобильные (iPhone) --- */
+@media (max-width: 768px) {
+  .timing-main-title {
+    font-size: 1.7rem;
+  }
+  .timing-sub-title {
+    font-size: 2.8rem;
+    /* Опускаем текст ниже на телефоне */
+    bottom: -40px;
+    /* Чуть сдвигаем слово левее, чтобы длинное "торжества" не обрезалось краем экрана */
+    transform: translateX(80%);
+    right: 50%;
+  }
+  .timeline-content {
+    width: 48%;
+  }
+
+  .timeline-title {
+    font-size: 1.7rem;
+  }
+  .timeline-time {
+    font-size: 0.95rem;
+  }
+
+  .timeline-row-fixed {
+    height: 120px;
+  }
+  .timeline-sequential {
+    height: 840px;
+  }
+
+  .timeline-row-fixed.left-side .timeline-content {
+    padding-right: 20px;
+  }
+  .timeline-row-fixed.right-side .timeline-content {
+    padding-left: 20px;
+  }
+
+  .sequential-runner {
+    font-size: 1.3rem;
+  }
+
+  /* ПОЛНАЯ АНИМАЦИЯ ДЛЯ ТЕЛЕФОНОВ БЕЗ ПРОПУСКОВ */
+  @keyframes runStopScale {
+    0% {
+      top: 0px;
+      transform: scale(1);
+      color: #e6c27a;
+      text-shadow: none;
+    }
+
+    /* ПУНКТ 1 */
+    4% {
+      top: 60px;
+      transform: scale(1);
+      color: #e6c27a;
+      text-shadow: none;
+    }
+    6% {
+      top: 60px;
+      transform: scale(3);
+      color: #f0e9dc;
+      text-shadow: 0 0 10px #f0e9dc;
+    }
+    9% {
+      top: 60px;
+      transform: scale(1);
+      color: #e6c27a;
+      text-shadow: none;
+    }
+
+    /* ПУНКТ 2 */
+    17% {
+      top: 180px;
+      transform: scale(1);
+      color: #e6c27a;
+      text-shadow: none;
+    }
+    19% {
+      top: 180px;
+      transform: scale(2);
+      color: #f0e9dc;
+      text-shadow: 0 0 10px #f0e9dc;
+    }
+    22% {
+      top: 180px;
+      transform: scale(1);
+      color: #e6c27a;
+      text-shadow: none;
+    }
+
+    /* ПУНКТ 3 */
+    31% {
+      top: 300px;
+      transform: scale(1);
+      color: #e6c27a;
+      text-shadow: none;
+    }
+    33% {
+      top: 300px;
+      transform: scale(2);
+      color: #f0e9dc;
+      text-shadow: 0 0 10px #f0e9dc;
+    }
+    36% {
+      top: 300px;
+      transform: scale(1);
+      color: #e6c27a;
+      text-shadow: none;
+    }
+
+    /* ПУНКТ 4 */
+    44% {
+      top: 420px;
+      transform: scale(1);
+      color: #e6c27a;
+      text-shadow: none;
+    }
+    46% {
+      top: 420px;
+      transform: scale(2);
+      color: #f0e9dc;
+      text-shadow: 0 0 10px #f0e9dc;
+    }
+    49% {
+      top: 420px;
+      transform: scale(1);
+      color: #e6c27a;
+      text-shadow: none;
+    }
+
+    /* ПУНКТ 5 */
+    57% {
+      top: 540px;
+      transform: scale(1);
+      color: #e6c27a;
+      text-shadow: none;
+    }
+    59% {
+      top: 540px;
+      transform: scale(2);
+      color: #f0e9dc;
+      text-shadow: 0 0 10px #f0e9dc;
+    }
+    62% {
+      top: 540px;
+      transform: scale(1);
+      color: #e6c27a;
+      text-shadow: none;
+    }
+
+    /* ПУНКТ 6 */
+    70% {
+      top: 660px;
+      transform: scale(1);
+      color: #e6c27a;
+      text-shadow: none;
+    }
+    72% {
+      top: 660px;
+      transform: scale(2);
+      color: #f0e9dc;
+      text-shadow: 0 0 10px #f0e9dc;
+    }
+    75% {
+      top: 660px;
+      transform: scale(1);
+      color: #e6c27a;
+      text-shadow: none;
+    }
+
+    /* ПУНКТ 7 */
+    84% {
+      top: 780px;
+      transform: scale(1);
+      color: #e6c27a;
+      text-shadow: none;
+    }
+    86% {
+      top: 780px;
+      transform: scale(2);
+      color: #f0e9dc;
+      text-shadow: 0 0 10px #f0e9dc;
+    }
+    89% {
+      top: 780px;
+      transform: scale(1);
+      color: #e6c27a;
+      text-shadow: none;
+    }
+
+    /* ФИНАЛ */
+    95% {
+      opacity: 1;
+    }
+    100% {
+      top: 840px;
+      opacity: 0;
+      transform: scale(1);
+    }
+  }
 }
 
 .section-dresscode {
