@@ -50,7 +50,6 @@ function GuestBlock() {
           </p>
         </div>
 
-        {/* Заготовка под календарь — сделаем его следующим шагом */}
         <div className="calendar-placeholder">
           <h3 className="month-title">Июль</h3>
 

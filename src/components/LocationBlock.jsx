@@ -2,7 +2,6 @@ import { Button, Container } from 'react-bootstrap';
 import place from '../assets/place.jpg';
 
 function LocationBlock() {
-  // Ссылка на Яндекс.Карты (замени на актуальную для Эмеральд Холл)
   const mapUrl = 'https://yandex.ru/maps/-/CPWKqO8H';
 
   return (

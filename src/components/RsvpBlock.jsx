@@ -6,17 +6,14 @@ function RsvpBlock() {
       <Container>
         <div className="rsvp-card">
           <div className="rsvp-top">
-            {/* Имена дугой (SVG) */}
             <div className="rsvp-names-curved">
               <svg viewBox="0 0 300 60" width="100%" height="100%">
-                {/* Невидимая дуга (квадратичная кривая Безье) */}
                 <path
                   id="name-curve"
                   d="M 25 50 Q 150 3 280 50"
                   fill="transparent"
                 />
 
-                {/* Текст, пущенный по этой дуге */}
                 <text fill="#f0e9dc" className="curved-text">
                   <textPath
                     href="#name-curve"

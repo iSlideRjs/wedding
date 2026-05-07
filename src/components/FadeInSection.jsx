@@ -5,27 +5,31 @@ function FadeInSection({ children }) {
   const domRef = useRef();
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          // Если блок появился на экране хотя бы на 15%
-          if (entry.isIntersecting) {
-            setVisible(true);
-            // Прекращаем следить, чтобы анимация сработала только один раз
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.15 }, // 15% видимости для старта
-    );
-
     const currentRef = domRef.current;
-    if (currentRef) {
-      observer.observe(currentRef);
-    }
+    let observer;
+    const timeoutId = setTimeout(() => {
+      observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              setVisible(true);
+              if (currentRef) observer.unobserve(currentRef);
+            }
+          });
+        },
 
+        { threshold: 0.15, rootMargin: '0px 0px -50px 0px' },
+      );
+
+      if (currentRef) {
+        observer.observe(currentRef);
+      }
+    }, 100);
     return () => {
-      if (currentRef) observer.unobserve(currentRef);
+      clearTimeout(timeoutId);
+      if (observer && currentRef) {
+        observer.unobserve(currentRef);
+      }
     };
   }, []);
 

@@ -3,23 +3,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Upright:wght@300;400;500;600;700&display=swap');
 
 :root {
-  --olive-bg: #6c755a; /* Оливковый для темных блоков */
-  --champagne-bg: #f0e9dc; /* Шампань для светлых блоков */
-  --text-dark: #4a4e4d; /* Темный текст для шампани */
-  --text-light: #f0e9dc; /* Светлый текст для оливы */
-  --accent-gold: #c08261; /* Акцентный цвет для имен и деталей */
+  --olive-bg: #6c755a;
+  --champagne-bg: #f0e9dc;
+  --text-dark: #4a4e4d;
+  --text-light: #f0e9dc;
+  --accent-gold: #c08261;
 }
 
 body {
   margin: 0;
   background-color: var(--champagne-bg);
-  font-family:
-    'Times New Roman', serif; /* Для эффекта классической полиграфии */
+  font-family: 'Times New Roman', serif;
 }
 
 .section-header {
   background-color: var(--champagne-bg);
-  min-height: auto; /* Чтобы блок занимал весь экран при открытии */
+  min-height: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -33,7 +32,6 @@ body {
   color: var(--text-dark);
 }
 
-/* Стили для текста один в один как на картинке */
 .header-top-text {
   letter-spacing: 4px;
   font-size: 0.9rem;
@@ -42,9 +40,9 @@ body {
 }
 
 .monogram-wrapper {
-  width: 100px; /* Увеличим немного размер для PNG */
+  width: 100px;
   height: 100px;
-  margin-bottom: 40px; /* Уменьшим отступ, так как венок сам по себе объемный */
+  margin-bottom: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -55,7 +53,7 @@ body {
 .monogram-img-png {
   width: 200%;
   height: 200%;
-  object-fit: contain; /* Чтобы венок не искажался */
+  object-fit: contain;
 }
 
 .header-names {
@@ -79,8 +77,8 @@ body {
 }
 
 .section-olive {
-  background-color: var(--olive-bg); /* Твой оливковый цвет #6C755A */
-  color: var(--text-light); /* Светлый текст (шампань) #F0E9DC */
+  background-color: var(--olive-bg);
+  color: var(--text-light);
   padding: 80px 20px;
   text-align: center;
 }
@@ -119,13 +117,12 @@ body {
   font-size: 3rem;
   margin-bottom: 20px;
 }
-/* Контейнер календаря */
+
 .calendar-container {
   margin-top: 30px;
   width: 100%;
 }
 
-/* Сетка дней недели */
 .calendar-grid {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
@@ -133,7 +130,6 @@ body {
   margin-top: 20px;
 }
 
-/* Общие стили для дней */
 .calendar-day {
   font-size: 0.9rem;
   padding: 5px;
@@ -143,7 +139,6 @@ body {
   justify-content: center;
 }
 
-/* Дни недели (пн, вт...) */
 .weekday {
   font-weight: bold;
   font-size: 0.7rem;
@@ -152,9 +147,8 @@ body {
   opacity: 0.8;
 }
 
-/* Выделенный день (4 июля) */
 .selected-day {
-  border: 1px solid var(--text-light); /* Светлый кружок */
+  border: 1px solid var(--text-light);
   border-radius: 50%;
   width: 30px;
   height: 30px;
@@ -171,7 +165,7 @@ body {
   font-size: 1.2rem;
 }
 .section-location {
-  background-color: var(--champagne-bg); /* Тот самый светлый оттенок */
+  background-color: var(--champagne-bg);
   padding: 100px 0;
   text-align: center;
   color: var(--text-dark);
@@ -199,53 +193,45 @@ body {
 }
 
 .btn-map {
-  /* Шрифт как мы обсуждали — строгий и классический */
   font-family: 'Times New Roman', Times, serif !important;
   text-transform: uppercase;
   letter-spacing: 3px;
-  font-weight: 600; /* Делаем сам текст чуть жирнее */
-
-  /* Настройка рамки */
-  border: 1px solid #4a4e4d !important; /* Увеличили толщину до 2px */
+  font-weight: 600;
+  border: 1px solid #4a4e4d !important;
   background-color: transparent;
   color: #4a4e4d;
-
-  /* Закругление краев */
-  border-radius: 10px !important; /* Совсем немного, чтобы убрать остроту */
-
-  /* Размеры и отступы */
+  border-radius: 10px !important;
   padding: 16px 45px;
   font-size: 0.85rem;
-  transition: all 0.2s ease; /* Ускоряем переход для отзывчивости */
+  transition: all 0.2s ease;
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
 }
 .btn-map:hover {
   background-color: #4a4e4d !important;
-  color: #f0e9dc !important; /* Твой цвет фона */
+  color: #f0e9dc !important;
   border-color: #4a4e4d !important;
 }
 
 .btn-map:active {
-  background-color: #4a4e4d !important; /* Чуть светлее черного, чтобы было видно нажатие */
+  background-color: #4a4e4d !important;
   color: #f0e9dc !important;
-  transform: scale(0.97); /* Кнопка слегка "вдавливается" при нажатии */
+  transform: scale(0.97);
 }
 
 .location-design-title {
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: 650px; /* Ограничиваем ширину, чтобы смещение было заметным */
-  margin: 0 auto 40px; /* Центрируем весь блок и даем отступ до адреса */
+  max-width: 650px;
+  margin: 0 auto 40px;
 }
 
-/* СЛОВО "МЕСТО" (вверху слева) */
 .text-place {
   font-family: 'Playfair Display', serif;
   font-weight: 400;
   font-size: 3rem;
-  letter-spacing: 10px; /* Широкое расстояние между буквами */
+  letter-spacing: 10px;
   align-self: center;
   text-transform: uppercase;
 }
@@ -280,14 +266,13 @@ body {
     max-width: 90%;
   }
 }
-/* --- Основные стили блока (Оливковый фон) --- */
+
 .section-timing-final {
-  background-color: #6c755a; /* Оливковый */
-  color: #f0e9dc; /* Шампань для текста */
+  background-color: #6c755a;
+  color: #f0e9dc;
   padding: 100px 20px;
 }
 
-/* --- Заголовок (уже классика) --- */
 .timing-title-wrapper {
   position: relative;
   display: flex;
@@ -311,7 +296,6 @@ body {
   display: flex;
   justify-content: center;
   color: #f0e9dc;
-  /* Увеличили отступ снизу, чтобы освободить место для рукописного текста */
 }
 .timing-sub-title {
   font-family: 'Great Vibes', cursive;
@@ -319,33 +303,28 @@ body {
   position: absolute;
   right: 55%;
   transform: translateX(100%);
-  /* ОПУСКАЕМ ТЕКСТ НИЖЕ (было -30px, стало -50px) */
   bottom: -55px;
   white-space: nowrap;
 }
 
-/* --- Контейнер последовательного тайминга --- */
 .timeline-sequential {
   position: relative;
   max-width: 600px;
   margin: 0 auto;
-  /* Высота контейнера = 7 пунктов * 120px высоты ряда = 840px */
   height: 840px;
 }
 
-/* Центральный золотой стержень (чистая линия) */
 .timeline-spine {
   position: absolute;
   top: 0;
   bottom: 0;
   left: 50%;
-  width: 2px; /* Чуть толще, чтобы выглядела как стержень */
-  background-color: #e6c27a; /* Золотой */
+  width: 2px;
+  background-color: #e6c27a;
   transform: translateX(-50%);
   z-index: 1;
 }
 
-/* --- ЕДИНСТВЕННОЕ БЕГУЩЕЕ СЕРДЦЕ (РУННЕР) --- */
 .sequential-runner {
   position: absolute;
   left: 50%;
@@ -361,27 +340,17 @@ body {
   font-size: 2rem;
   z-index: 3;
   transform-origin: center center;
-
-  /* Подключаем анимацию сразу ко всем сердечкам навсегда... */
   animation: runStopScale 14s infinite linear;
-
-  /* ...НО по умолчанию ставим её на ПАУЗУ */
   animation-play-state: paused;
-  /* ... все твои старые свойства ... */
-
-  /* Добавляем аппаратное ускорение и защиту от мерцания (iOS Fix) */
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   transform: translateZ(0);
 }
 
-/* --- СНИМАЕМ С ПАУЗЫ ПРИ ПОЯВЛЕНИИ НА ЭКРАНЕ --- */
 .animate-on-scroll .sequential-runner {
-  /* Как только добавился класс, сердце продолжает бежать с того же места */
   animation-play-state: running;
 }
-/* --- МАГИЯ АНИМАЦИИ: Движение -> Стоп -> Увеличение -> Движение --- */
-/* Мы делим 100% времени анимации (18с) на 7 этапов + паузы */
+
 @keyframes runStopScale {
   0% {
     top: 0px;
@@ -395,7 +364,6 @@ body {
     transform: scale(1);
     opacity: 1;
   }
-  /* ПУНКТ 1 */
   4% {
     top: 60px;
     transform: scale(1);
@@ -415,7 +383,6 @@ body {
     text-shadow: none;
   }
 
-  /* ПУНКТ 2 */
   17% {
     top: 180px;
     transform: scale(1);
@@ -435,7 +402,6 @@ body {
     text-shadow: none;
   }
 
-  /* ПУНКТ 3 */
   31% {
     top: 300px;
     transform: scale(1);
@@ -455,7 +421,6 @@ body {
     text-shadow: none;
   }
 
-  /* ПУНКТ 4 */
   44% {
     top: 420px;
     transform: scale(1);
@@ -475,7 +440,6 @@ body {
     text-shadow: none;
   }
 
-  /* ПУНКТ 5 */
   57% {
     top: 540px;
     transform: scale(1);
@@ -495,7 +459,6 @@ body {
     text-shadow: none;
   }
 
-  /* ПУНКТ 6 */
   70% {
     top: 660px;
     transform: scale(1);
@@ -515,7 +478,6 @@ body {
     text-shadow: none;
   }
 
-  /* ПУНКТ 7 */
   84% {
     top: 780px;
     transform: scale(1);
@@ -535,7 +497,6 @@ body {
     text-shadow: none;
   }
 
-  /* ФИНАЛ */
   95% {
     opacity: 1;
   }
@@ -551,18 +512,16 @@ body {
   }
 }
 
-/* --- Настройки Рядов Событий (Чередование) --- */
 .timeline-row-fixed {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  height: 120px; /* КРИТИЧЕСКИ ВАЖНАЯ ЖЕСТКАЯ ВЫСОТА РЯДА */
+  height: 120px;
   position: relative;
   z-index: 2;
 }
 
-/* Контент слева/справа */
 .timeline-row-fixed.left-side {
   flex-direction: row;
 }
@@ -570,18 +529,15 @@ body {
   flex-direction: row-reverse;
 }
 
-/* Настройки текста */
 .timeline-content {
   width: 50%;
 }
 
-/* Текст слева: выравниваем по правому краю, ближе к стержню */
 .timeline-row-fixed.left-side .timeline-content {
   text-align: right;
-  padding-right: 35px; /* Отступ до золотого стержня */
+  padding-right: 35px;
 }
 
-/* Текст справа: выравниваем по левому краю */
 .timeline-row-fixed.right-side .timeline-content {
   text-align: left;
   padding-left: 35px;
@@ -590,7 +546,7 @@ body {
 .timeline-time {
   font-family: 'Playfair Display', serif;
   font-size: 2rem;
-  color: #e6c27a; /* Время золотое */
+  color: #e6c27a;
   margin-bottom: 3px;
   display: block;
   letter-spacing: 2px;
@@ -598,25 +554,24 @@ body {
 
 .timeline-title {
   font-family: 'Great Vibes', cursive;
-  font-size: 2.5rem; /* Крупный рукописный шрифт */
+  font-size: 2.5rem;
   line-height: 0.9;
   display: block;
 }
 
 .timeline-empty {
-  width: 50%; /* Для баланса flex-box */
+  width: 50%;
 }
 
-/* --- Адаптация под мобильные (iPhone) --- */
 @media (max-width: 768px) {
   .timing-main-title {
     font-size: 1.7rem;
   }
   .timing-sub-title {
     font-size: 2.8rem;
-    /* Опускаем текст ниже на телефоне */
+
     bottom: -40px;
-    /* Чуть сдвигаем слово левее, чтобы длинное "торжества" не обрезалось краем экрана */
+
     transform: translateX(80%);
     right: 50%;
   }
@@ -658,7 +613,6 @@ body {
     }
   }
 
-  /* ПОЛНАЯ АНИМАЦИЯ ДЛЯ ТЕЛЕФОНОВ БЕЗ ПРОПУСКОВ */
   @keyframes runStopScale {
     0% {
       top: 0px;
@@ -673,7 +627,6 @@ body {
       opacity: 1;
     }
 
-    /* ПУНКТ 1 */
     4% {
       top: 60px;
       transform: scale(1);
@@ -693,7 +646,6 @@ body {
       text-shadow: none;
     }
 
-    /* ПУНКТ 2 */
     17% {
       top: 180px;
       transform: scale(1);
@@ -713,7 +665,6 @@ body {
       text-shadow: none;
     }
 
-    /* ПУНКТ 3 */
     31% {
       top: 300px;
       transform: scale(1);
@@ -733,7 +684,6 @@ body {
       text-shadow: none;
     }
 
-    /* ПУНКТ 4 */
     44% {
       top: 420px;
       transform: scale(1);
@@ -753,7 +703,6 @@ body {
       text-shadow: none;
     }
 
-    /* ПУНКТ 5 */
     57% {
       top: 540px;
       transform: scale(1);
@@ -773,7 +722,6 @@ body {
       text-shadow: none;
     }
 
-    /* ПУНКТ 6 */
     70% {
       top: 660px;
       transform: scale(1);
@@ -793,7 +741,6 @@ body {
       text-shadow: none;
     }
 
-    /* ПУНКТ 7 */
     84% {
       top: 780px;
       transform: scale(1);
@@ -813,7 +760,6 @@ body {
       text-shadow: none;
     }
 
-    /* ФИНАЛ */
     95% {
       opacity: 1;
     }
@@ -837,7 +783,6 @@ body {
   color: var(--text-dark);
 }
 
-/* Общий стиль для фиксированных заголовков */
 .dress-header-anchor,
 .wishes-header-anchor {
   position: relative;
@@ -862,13 +807,12 @@ body {
   font-family: 'Great Vibes', cursive;
   font-size: 3rem;
   display: block;
-  margin-top: -30px; /* Эффект наложения, как на фото */
+  margin-top: -30px;
   font-weight: 400;
   align-self: flex-end;
   margin-left: 20%;
 }
 
-/* Текстовые блоки */
 .dress-description,
 .wishes-text {
   font-family: 'Playfair Display', serif;
@@ -879,11 +823,10 @@ body {
   line-height: 1.8;
 }
 
-/* Палитра цветов */
 .color-palette {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap; /* Чтобы на телефонах кружки встали в 2 ряда, если не влезут */
+  flex-wrap: wrap;
   gap: 15px;
   margin: 30px auto;
   max-width: 500px;
@@ -894,7 +837,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 90px; /* Увеличили размер контейнера под рамку */
+  width: 90px;
   height: 90px;
 }
 
@@ -903,11 +846,10 @@ body {
   height: 55px;
   border-radius: 50%;
   position: relative;
-  z-index: 1; /* Чтобы круг был над рамкой, если они накладываются */
+  z-index: 1;
   border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-/* Декоративная рамка-венок */
 .color-circle-wrapper::after {
   content: '';
   position: absolute;
@@ -915,56 +857,54 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  /* Используем SVG с изящным венком */
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50 10 C 25 10, 10 25, 10 50 C 10 75, 25 90, 50 90 C 75 90, 90 75, 90 50 C 90 35, 80 20, 65 15' fill='none' stroke='%23556b2f' stroke-width='0.5' stroke-dasharray='2 2' /%3E%3Cpath d='M65 15 L 68 12 M 65 15 L 62 12' stroke='%23556b2f' stroke-width='0.5' /%3E%3C/svg%3E");
   background-size: contain;
   background-repeat: no-repeat;
-  opacity: 0.6; /* Делаем веточки полупрозрачными и нежными */
-  pointer-events: none; /* Чтобы рамка не мешала кликать на круг */
-  transform: rotate(-10deg); /* Слегка повернем для естественности */
+  opacity: 0.6;
+  pointer-events: none;
+  transform: rotate(-10deg);
 }
 
 .color-circle:hover {
-  transform: scale(2); /* Легкий интерактив при наведении */
+  transform: scale(2);
 }
 
-/* ЦВЕТА ПАЛИТРЫ */
 .color-circle.oliva {
   background-image: url('./assets/oliva.png');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-} /* Тот самый оливковый из 4 блока */
+}
 .color-circle.brown {
   background-image: url('./assets/brown.png');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-} /* Нежный шалфей */
+}
 .color-circle.blue {
   background-image: url('./assets/blue.png');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-} /* Приглушенная бронза под скетч */
+}
 .color-circle.grey {
   background-image: url('./assets/grey.png');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-} /* Теплый песочный */
+}
 .color-circle.gold {
   background-image: url('./assets/gold.png');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-} /* Насыщенный беж (чуть темнее фона) */
+}
 .color-circle.indigo {
   background-image: url('./assets/indigo.png');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-} /* Благородный серый камень для баланса */
+}
 .color-circle.spider {
   background-image: url('./assets/marvel.png');
   background-repeat: no-repeat;
@@ -976,8 +916,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-} /* Благородный серый камень для баланса */
-/* Разделитель между блоками */
+}
 .dress-divider-wrapper {
   display: flex;
   justify-content: center;
@@ -991,32 +930,29 @@ body {
 }
 
 .section-rsvp-final {
-  background-color: #6c755a; /* Оливковый */
+  background-color: #6c755a;
   padding: 50px 20px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-/* Контейнер для центрирования контента */
 .rsvp-card {
   text-align: center;
-  color: #e6c27a; /* Золотой оттенок */
+  color: #e6c27a;
   max-width: 500px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 60px; /* Расстояние между тремя основными частями */
+  gap: 60px;
 }
 
-/* Орнамент между именами и датой */
 .rsvp-ornament {
   margin: 15px 0;
   font-size: 2rem;
   opacity: 0.8;
 }
 
-/* Блок с датой и линиями */
 .rsvp-date-wrapper {
   display: flex;
   align-items: center;
@@ -1040,7 +976,6 @@ body {
   line-height: 1;
 }
 
-/* Главный заголовок */
 .rsvp-main-text {
   font-family: 'Playfair Display', serif;
   font-size: 2.7rem;
@@ -1051,7 +986,6 @@ body {
   color: #f0e9dc;
 }
 
-/* Текст над кнопкой */
 .rsvp-subtitle {
   font-family: 'Playfair Display', serif;
   font-size: 0.75rem;
@@ -1062,7 +996,6 @@ body {
   color: #f0e9dc;
 }
 
-/* Кнопка "ЗАПОЛНИТЬ АНКЕТУ" */
 .btn-form {
   background-color: transparent;
   border: 1px solid #f0e9dc;
@@ -1079,7 +1012,6 @@ body {
   max-width: 350px;
 }
 
-/* Эффекты для кнопки */
 @media (hover: hover) {
   .btn-form:hover {
     background-color: #6d7262;
@@ -1092,7 +1024,6 @@ body {
   color: #6c755a;
 }
 
-/* Адаптация под мобильные экраны */
 @media (max-width: 768px) {
   .rsvp-main-text {
     font-size: 2.5rem;
@@ -1107,15 +1038,14 @@ body {
     padding: 50px 20px;
   }
 }
-/* Контейнер для SVG */
+
 .rsvp-names-curved {
   width: 100%;
-  max-width: 300px; /* Ограничиваем ширину, чтобы дуга не разъезжалась */
+  max-width: 300px;
   margin: 0 auto;
   height: 60px;
 }
 
-/* Стили для самого текста внутри SVG */
 .curved-text {
   font-family: 'Cormorant Upright', serif;
   font-weight: 300;
@@ -1123,10 +1053,10 @@ body {
   font-size: 20px;
   letter-spacing: 2px;
 }
-/* --- ЭФФЕКТ ПЛАВНОГО ПОЯВЛЕНИЯ ПРИ СКРОЛЛЕ --- */
+
 .fade-in-section {
   opacity: 0;
-  transform: translateY(40px); /* Сдвиг вниз */
+  transform: translateY(40px);
   visibility: hidden;
   transition:
     opacity 0.8s ease-out,
@@ -1136,6 +1066,6 @@ body {
 
 .fade-in-section.is-visible {
   opacity: 1;
-  transform: none; /* Возвращается на свое место */
+  transform: none;
   visibility: visible;
 }

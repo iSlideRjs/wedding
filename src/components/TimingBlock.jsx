@@ -10,12 +10,10 @@ function TimingBlock() {
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        // Теперь мы просто передаем состояние видимости напрямую
-        // Если блок видно — true, если ушел с экрана — false
         setIsVisible(entry.isIntersecting);
       },
       {
-        threshold: 0.2, // Срабатывает, когда видно хотя бы 20% блока
+        threshold: 0.2,
       },
     );
 
