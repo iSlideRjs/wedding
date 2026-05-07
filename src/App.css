@@ -299,6 +299,7 @@ body {
   font-size: 0.55rem;
   letter-spacing: 1px;
   opacity: 0.8;
+  line-height: 1.6;
 }
 .timing-main-title {
   font-family: 'Playfair Display', serif;
@@ -362,10 +363,16 @@ body {
   transform-origin: center center;
 
   /* Подключаем анимацию сразу ко всем сердечкам навсегда... */
-  animation: runStopScale 12s infinite linear;
+  animation: runStopScale 14s infinite linear;
 
   /* ...НО по умолчанию ставим её на ПАУЗУ */
   animation-play-state: paused;
+  /* ... все твои старые свойства ... */
+
+  /* Добавляем аппаратное ускорение и защиту от мерцания (iOS Fix) */
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform: translateZ(0);
 }
 
 /* --- СНИМАЕМ С ПАУЗЫ ПРИ ПОЯВЛЕНИИ НА ЭКРАНЕ --- */
@@ -381,8 +388,13 @@ body {
     transform: scale(1);
     color: #e6c27a;
     text-shadow: none;
+    opacity: 0;
   }
-
+  2% {
+    top: 0px;
+    transform: scale(1);
+    opacity: 1;
+  }
   /* ПУНКТ 1 */
   4% {
     top: 60px;
@@ -527,6 +539,11 @@ body {
   95% {
     opacity: 1;
   }
+  98% {
+    top: 840px;
+    opacity: 0;
+    transform: scale(1);
+  }
   100% {
     top: 840px;
     opacity: 0;
@@ -572,7 +589,7 @@ body {
 
 .timeline-time {
   font-family: 'Playfair Display', serif;
-  font-size: 1.1rem;
+  font-size: 2rem;
   color: #e6c27a; /* Время золотое */
   margin-bottom: 3px;
   display: block;
@@ -581,7 +598,7 @@ body {
 
 .timeline-title {
   font-family: 'Great Vibes', cursive;
-  font-size: 2.3rem; /* Крупный рукописный шрифт */
+  font-size: 2.5rem; /* Крупный рукописный шрифт */
   line-height: 0.9;
   display: block;
 }
@@ -611,7 +628,7 @@ body {
     font-size: 1.7rem;
   }
   .timeline-time {
-    font-size: 0.95rem;
+    font-size: 1.7rem;
   }
 
   .timeline-row-fixed {
@@ -639,6 +656,12 @@ body {
       transform: scale(1);
       color: #e6c27a;
       text-shadow: none;
+      opacity: 0;
+    }
+    2% {
+      top: 0px;
+      transform: scale(1);
+      opacity: 1;
     }
 
     /* ПУНКТ 1 */
@@ -784,6 +807,11 @@ body {
     /* ФИНАЛ */
     95% {
       opacity: 1;
+    }
+    98% {
+      top: 840px;
+      opacity: 0;
+      transform: scale(1);
     }
     100% {
       top: 840px;
