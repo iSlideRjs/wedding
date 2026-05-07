@@ -358,7 +358,7 @@ body {
   align-items: center;
   line-height: 1;
   color: #e6c27a;
-  font-size: 1.6rem;
+  font-size: 2rem;
   z-index: 3;
   transform-origin: center center;
 
@@ -646,7 +646,16 @@ body {
   }
 
   .sequential-runner {
-    font-size: 1.3rem;
+    font-size: 2rem;
+  }
+
+  @media (max-width: 345px) {
+    .timeline-title {
+      font-size: 1.4rem;
+    }
+    .timeline-time {
+      font-size: 1.7rem;
+    }
   }
 
   /* ПОЛНАЯ АНИМАЦИЯ ДЛЯ ТЕЛЕФОНОВ БЕЗ ПРОПУСКОВ */
