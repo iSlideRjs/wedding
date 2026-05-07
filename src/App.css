@@ -1123,3 +1123,19 @@ body {
   font-size: 20px;
   letter-spacing: 2px;
 }
+/* --- ЭФФЕКТ ПЛАВНОГО ПОЯВЛЕНИЯ ПРИ СКРОЛЛЕ --- */
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(40px); /* Сдвиг вниз */
+  visibility: hidden;
+  transition:
+    opacity 0.8s ease-out,
+    transform 0.8s ease-out;
+  will-change: opacity, visibility;
+}
+
+.fade-in-section.is-visible {
+  opacity: 1;
+  transform: none; /* Возвращается на свое место */
+  visibility: visible;
+}
