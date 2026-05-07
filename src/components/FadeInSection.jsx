@@ -16,7 +16,7 @@ function FadeInSection({ children }) {
           }
         });
       },
-      { threshold: 0.1 }, // 15% видимости для старта
+      { threshold: 0.15 }, // 15% видимости для старта
     );
 
     const currentRef = domRef.current;
