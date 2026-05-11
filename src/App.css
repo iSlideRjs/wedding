@@ -1107,3 +1107,69 @@ body {
 .wishes-content.animate-lines .line-mask:nth-child(4) .reveal-text {
   transition-delay: 0.8s;
 }
+
+.rsvp-countdown-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-top: 3rem;
+}
+
+.countdown-title {
+  font-size: clamp(0.75rem, 2.5vw, 0.9rem);
+  color: #a9a9a9;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  text-align: center;
+  margin: 0 0 0.5rem 0;
+}
+
+.rsvp-countdown {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin: 0;
+}
+
+.countdown-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 55px;
+}
+
+.countdown-value {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.5rem, 5vw, 2.2rem);
+  color: #f0e9dc;
+  line-height: 1;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+}
+
+.countdown-label {
+  font-size: clamp(0.6rem, 2vw, 0.75rem);
+  color: #a9a9a9;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-top: 0.3rem;
+}
+
+.countdown-separator {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.3rem, 4vw, 1.8rem);
+  color: #f0e9dc;
+  opacity: 0.5;
+  line-height: 1.1;
+}
+
+@media (max-width: 380px) {
+  .countdown-item {
+    min-width: 45px;
+  }
+  .rsvp-countdown {
+    gap: 0.2rem;
+  }
+}
