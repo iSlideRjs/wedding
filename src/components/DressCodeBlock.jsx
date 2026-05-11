@@ -1,8 +1,30 @@
+import { useState, useEffect, useRef } from 'react';
 import { Container } from 'react-bootstrap';
+import FadeInSection from './FadeInSection';
 
 function DressCodeBlock() {
   const colors = ['oliva', 'brown', 'blue', 'grey', 'gold', 'indigo'];
+  const [linesVisible, setLinesVisible] = useState(false);
+  const wishesRef = useRef(null);
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setLinesVisible(true);
+          observer.disconnect();
+        }
+      },
+
+      { threshold: 0, rootMargin: '0px 0px -25% 0px' },
+    );
+
+    if (wishesRef.current) {
+      observer.observe(wishesRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
   return (
     <section className="section-dresscode">
       <Container>
@@ -40,24 +62,41 @@ function DressCodeBlock() {
           <hr className="dress-divider" />
         </div>
 
-        <div className="wishes-content">
-          <div className="wishes-header-anchor">
-            <h2 className="wishes-main-title">НАШИ</h2>
-            <span className="wishes-sub-title">пожелания</span>
-          </div>
+        <FadeInSection>
+          <div
+            ref={wishesRef}
+            className={`wishes-content ${linesVisible ? 'animate-lines' : ''}`}
+          >
+            <div className="line-mask">
+              <div className="reveal-text wishes-header-anchor">
+                <h2 className="wishes-main-title">НАШИ</h2>
+                <span className="wishes-sub-title">пожелания</span>
+              </div>
+            </div>
 
-          <p className="wishes-text">
-            ВАШИ УЛЫБКИ И ХОРОШЕЕ НАСТРОЕНИЕ ПОДАРЯТ НАМ НЕЗАБЫВАЕМОЕ СЧАСТЬЕ В
-            ЭТОТ ДЕНЬ, А ПОЖЕЛАНИЯ В КОНВЕРТАХ ПОМОГУТ НАМ ОСУЩЕСТВИТЬ НАШИ
-            МЕЧТЫ
-            <br />
-            <br />
-            ПРОСИМ ВАС НЕ ПРИНОСИТЬ БОЛЬШИЕ БУКЕТЫ. ЕСЛИ ХОТИТЕ ПОРАДОВАТЬ НАС
-            ЦВЕТАМИ, ПОЖАЛУЙСТА, ВЫБЕРИТЕ ОДИН НЕУПАКОВАННЫЙ ЦВЕТОК - ТОТ,
-            КОТОРЫЙ АССОЦИИРУЕТСЯ У ВАС С НЕВЕСТОЙ. ВМЕСТЕ МЫ СОЗДАДИМ ОДИН
-            ПРЕКРАСНЫЙ И СИМВОЛИЧНЫЙ БУКЕТ.
-          </p>
-        </div>
+            <div className="line-mask">
+              <p className="reveal-text wishes-text">
+                ВАШИ УЛЫБКИ И ХОРОШЕЕ НАСТРОЕНИЕ ПОДАРЯТ НАМ НЕЗАБЫВАЕМОЕ
+                СЧАСТЬЕ В ЭТОТ ДЕНЬ, А ПОЖЕЛАНИЯ В КОНВЕРТАХ ПОМОГУТ НАМ
+                ОСУЩЕСТВИТЬ НАШИ МЕЧТЫ.
+              </p>
+            </div>
+
+            <div className="line-mask">
+              <p className="reveal-text wishes-text">
+                ПРОСИМ ВАС НЕ ПРИНОСИТЬ БОЛЬШИЕ БУКЕТЫ. ЕСЛИ ХОТИТЕ ПОРАДОВАТЬ
+                НАС ЦВЕТАМИ, ПОЖАЛУЙСТА, ВЫБЕРИТЕ ОДИН НЕУПАКОВАННЫЙ ЦВЕТОК -
+                ТОТ, КОТОРЫЙ АССОЦИИРУЕТСЯ У ВАС С НЕВЕСТОЙ.
+              </p>
+            </div>
+
+            <div className="line-mask">
+              <p className="reveal-text wishes-text">
+                ВМЕСТЕ МЫ СОЗДАДИМ ОДИН ПРЕКРАСНЫЙ И СИМВОЛИЧНЫЙ БУКЕТ.
+              </p>
+            </div>
+          </div>
+        </FadeInSection>
       </Container>
     </section>
   );

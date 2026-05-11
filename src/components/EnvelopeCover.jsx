@@ -1,16 +1,13 @@
 import { useState, useEffect } from 'react';
-import '../envelope.css'; // Импортируем наши стили
+import '../envelope.css';
 
-// ЕСЛИ ПЕЧАТЬ ЛЕЖИТ В ПАПКЕ src/assets, раскомментируй строку ниже:
 import mySeal from '../assets/heart.png';
 
 function EnvelopeCover({ onComplete }) {
   const [isOpening, setIsOpening] = useState(false);
   useEffect(() => {
-    // 1. При загрузке конверта отключаем скролл
     document.body.style.overflow = 'hidden';
 
-    // 2. Функция очистки: когда конверт удалится, возвращаем скролл
     return () => {
       document.body.style.overflow = '';
     };
@@ -18,12 +15,10 @@ function EnvelopeCover({ onComplete }) {
   const handleSealClick = () => {
     setIsOpening(true);
 
-    // 1. Возвращаем скролл синхронно с началом появления сайта (через 0.5 сек)
     setTimeout(() => {
       document.body.style.overflow = '';
     }, 500);
 
-    // 2. Полностью удаляем конверт из кода, как и раньше (через 2.5 сек)
     setTimeout(() => {
       if (onComplete) onComplete();
     }, 4000);
@@ -31,7 +26,6 @@ function EnvelopeCover({ onComplete }) {
 
   return (
     <div className={`envelope-overlay ${isOpening ? 'is-opening' : ''}`}>
-      {/* ВОТ ОНА, НАША СЦЕНА, СОХРАНЯЮЩАЯ ПРОПОРЦИИ */}
       <div className="envelope-scene">
         <div className="flap-wrapper left">
           <div className="flap left"></div>

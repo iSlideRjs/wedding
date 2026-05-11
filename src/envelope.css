@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&display=swap');
 
-/* --- ГЛАВНЫЙ ЭКРАН (ВИДИМАЯ ЗОНА) --- */
 .envelope-overlay {
   position: fixed;
   top: 0;
@@ -8,7 +7,7 @@
   width: 100vw;
   height: 100vh;
   z-index: 10000;
-  overflow: hidden; /* Обрезает всё, что вылазит за края экрана */
+  overflow: hidden;
   pointer-events: auto;
   background-color: #f0e9dc;
   transition:
@@ -18,11 +17,10 @@
 
 .envelope-overlay.is-opening {
   pointer-events: none;
-  opacity: 0; /* Фон плавно исчезает */
+  opacity: 0;
   visibility: hidden;
 }
 
-/* --- МАГИЧЕСКАЯ СЦЕНА (ИМЕННО ОНА ДЕРЖИТ ПРОПОРЦИИ) --- */
 .envelope-scene {
   position: absolute;
   top: 50%;
@@ -32,27 +30,23 @@
   height: 100vh;
 }
 
-/* Если экран вертикальный (телефон) - делаем сцену широкой, чтобы бока обрезались! */
 @media (max-width: 1330px) {
   .envelope-scene {
-    width: 140vh; /* Идеальная пропорция, края уходят за экран */
+    width: 140vh;
     height: 100vh;
   }
 }
-/* --- ЖЕСТКИЙ ФИКС ДЛЯ ГОРИЗОНТАЛЬНЫХ ТЕЛЕФОНОВ (LANDSCAPE) --- */
+
 @media screen and (max-width: 1366px) and (orientation: landscape) {
   .top-text {
     top: 3vh !important;
   }
 
   .bottom-text {
-    /* 15vh - это динамический отступ. 
-       На телефоне это ~50px (выше панели), на планшете ~100px */
     bottom: 22vh !important;
     font-size: 15px !important;
   }
 
-  /* Умный размер: на телефоне сожмется до 1.4rem, на планшете вырастет до 2.2rem */
   .envelope-main-title {
     font-size: clamp(1.4rem, 4vw, 2.2rem) !important;
     margin-bottom: 0 !important;
@@ -62,26 +56,24 @@
     font-size: clamp(0.9rem, 3vw, 1.5rem) !important;
   }
 
-  /* Печать подстраивается под ВЫСОТУ экрана (vh), чтобы точно влезть */
   .wax-seal {
-    width: clamp(120px, 17vw, 200px) !important;
-    height: clamp(120px, 17vw, 200px) !important;
+    width: clamp(100px, 14vw, 170px) !important;
+    height: clamp(100px, 14vw, 170px) !important;
   }
 }
-/* --- МАГИЯ ТЕНЕЙ И КЛАПАНОВ --- */
+
 .flap-wrapper {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  /* Плавный отлет во все стороны за 2.5 секунды */
+
   transition:
     transform 4s cubic-bezier(0.25, 1, 0.3, 1),
     opacity 3s ease 1s;
 }
 
-/* 1. БОКОВЫЕ КЛАПАНЫ */
 .flap-wrapper.left {
   z-index: 1;
   filter: drop-shadow(4px 0 10px rgba(0, 0, 0, 0.06));
@@ -90,7 +82,7 @@
   width: 100%;
   height: 100%;
   background-color: #dcd2c6;
-  /*clip-path: polygon(0 0, 50% 50%, 0 100%);*/
+
   clip-path: polygon(0 0, 48% 48%, 48% 52%, 0 100%);
 }
 
@@ -102,7 +94,7 @@
   width: 100%;
   height: 100%;
   background-color: #dcd2c6;
-  /*clip-path: polygon(100% 0, 50% 50%, 100% 100%);*/
+
   clip-path: polygon(100% 0, 52% 48%, 52% 52%, 100% 100%);
 }
 
@@ -115,11 +107,10 @@
   width: 100%;
   height: 100%;
   background-color: #e6ddd0;
-  /*clip-path: polygon(0 100%, 100% 100%, 50% 48%);*/
-  clip-path: polygon(0 100%, 100% 100%, 52% 48%, 48% 48%);
+
+  clip-path: polygon(0 100%, 100% 100%, 52% 40%, 48% 40%);
 }
 
-/* 3. ВЕРХНИЙ КЛАПАН (Отбрасывает главную тень) */
 .flap-wrapper.top {
   z-index: 3;
   filter: drop-shadow(0 12px 25px rgba(0, 0, 0, 0.18));
@@ -128,17 +119,16 @@
   width: 100%;
   height: 100%;
   background-color: #f0e9dc;
-  /*clip-path: polygon(0 0, 100% 0, 50% 52%);*/
+
   clip-path: polygon(0 0, 100% 0, 52% 52%, 48% 52%);
 }
 
-/* --- ТЕКСТА (Жестко привязаны к центру экрана, а не к ширине сцены!) --- */
 .top-text {
   position: absolute;
   top: 15vh;
   left: 50%;
   transform: translateX(-50%);
-  width: 100vw; /* Ширина экрана, чтобы текст не уезжал */
+  width: 100vw;
   text-align: center;
 }
 
@@ -174,7 +164,6 @@
   animation: floatText 2.5s ease-in-out infinite;
 }
 
-/* --- СУРГУЧНАЯ ПЕЧАТЬ --- */
 .seal-container {
   position: absolute;
   top: 50%;
@@ -188,8 +177,8 @@
   background: none;
   border: none;
   cursor: pointer;
-  width: clamp(150px, 35vw, 200px);
-  height: clamp(150px, 35vw, 200px);
+  width: clamp(120px, 25vw, 200px);
+  height: clamp(120px, 25vw, 200px);
   transition: transform 0.3s ease;
 }
 
@@ -202,7 +191,6 @@
   object-fit: contain;
 }
 
-/* --- АНИМАЦИЯ РАЗРЫВА ВО ВСЕ СТОРОНЫ --- */
 .is-opening .flap-wrapper.top {
   transform: translateY(-100vh);
   opacity: 0;
@@ -211,7 +199,7 @@
   transform: translateY(100vh);
   opacity: 0;
 }
-/* Бока уезжают за пределы экрана */
+
 .is-opening .flap-wrapper.left {
   transform: translateX(-100vw);
   opacity: 0;
@@ -228,11 +216,9 @@
 @keyframes floatText {
   0%,
   100% {
-    /* Текст стоит на месте и отцентрован */
     transform: translateX(-50%) translateY(0);
   }
   50% {
-    /* Текст отцентрован, но плавно поднимается на 8 пикселей вверх */
     transform: translateX(-50%) translateY(-8px);
   }
 }
