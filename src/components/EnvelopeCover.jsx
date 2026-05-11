@@ -3,7 +3,7 @@ import '../envelope.css';
 
 import mySeal from '../assets/heart.png';
 
-function EnvelopeCover({ onComplete }) {
+function EnvelopeCover({ onComplete, onOpenStart }) {
   const [isOpening, setIsOpening] = useState(false);
   useEffect(() => {
     document.body.style.overflow = 'hidden';
@@ -14,6 +14,8 @@ function EnvelopeCover({ onComplete }) {
   }, []);
   const handleSealClick = () => {
     setIsOpening(true);
+    // 2. МГНОВЕННО сообщаем App.jsx, что процесс пошел (сайт должен появиться)
+    if (onOpenStart) onOpenStart();
 
     setTimeout(() => {
       document.body.style.overflow = '';

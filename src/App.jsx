@@ -12,29 +12,43 @@ import { useState } from 'react';
 
 function App() {
   const [showEnvelope, setShowEnvelope] = useState(true);
+  const [isEnvelopeOpening, setIsEnvelopeOpening] = useState(false);
+
+  const handleOpenStart = () => {
+    setIsEnvelopeOpening(true);
+  };
 
   const dismissEnvelope = () => {
     setShowEnvelope(false);
   };
   return (
     <div className="wedding-app">
-      {showEnvelope && <EnvelopeCover onComplete={dismissEnvelope} />}
-      <Header />
-      <FadeInSection>
-        <GuestBlock />
-      </FadeInSection>
-      <FadeInSection>
-        <LocationBlock />
-      </FadeInSection>
-      <FadeInSection>
-        <TimingBlock />
-      </FadeInSection>
-      <FadeInSection>
-        <DressCodeBlock />
-      </FadeInSection>
-      <FadeInSection>
-        <RsvpBlock />
-      </FadeInSection>
+      {showEnvelope && (
+        <EnvelopeCover
+          onOpenStart={handleOpenStart}
+          onComplete={dismissEnvelope}
+        />
+      )}
+      <div
+        className={`site-content ${!isEnvelopeOpening ? 'hidden-content' : ''}`}
+      >
+        <Header />
+        <FadeInSection>
+          <GuestBlock />
+        </FadeInSection>
+        <FadeInSection>
+          <LocationBlock />
+        </FadeInSection>
+        <FadeInSection>
+          <TimingBlock />
+        </FadeInSection>
+        <FadeInSection>
+          <DressCodeBlock />
+        </FadeInSection>
+        <FadeInSection>
+          <RsvpBlock />
+        </FadeInSection>
+      </div>
     </div>
   );
 }
