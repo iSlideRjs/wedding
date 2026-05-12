@@ -70,25 +70,33 @@ function RsvpBlock() {
 
               <div className="rsvp-countdown">
                 <div className="countdown-item">
-                  <span className="countdown-value">{timeLeft.days}</span>
+                  <span key={timeLeft.days} className="countdown-value">
+                    {timeLeft.days}
+                  </span>
                   <span className="countdown-label">дней</span>
                 </div>
                 <span className="countdown-separator">:</span>
 
                 <div className="countdown-item">
-                  <span className="countdown-value">{timeLeft.hours}</span>
+                  <span key={timeLeft.hours} className="countdown-value">
+                    {timeLeft.hours}
+                  </span>
                   <span className="countdown-label">часов</span>
                 </div>
                 <span className="countdown-separator">:</span>
 
                 <div className="countdown-item">
-                  <span className="countdown-value">{timeLeft.minutes}</span>
+                  <span key={timeLeft.minutes} className="countdown-value">
+                    {timeLeft.minutes}
+                  </span>
                   <span className="countdown-label">минут</span>
                 </div>
                 <span className="countdown-separator">:</span>
 
                 <div className="countdown-item">
-                  <span className="countdown-value">{timeLeft.seconds}</span>
+                  <span key={timeLeft.seconds} className="countdown-value">
+                    {timeLeft.seconds}
+                  </span>
                   <span className="countdown-label">секунд</span>
                 </div>
               </div>

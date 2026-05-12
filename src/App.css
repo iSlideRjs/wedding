@@ -148,11 +148,44 @@ body {
 }
 
 .selected-day {
-  border: 1px solid var(--text-light);
-  border-radius: 50%;
-  width: 30px;
-  height: 30px;
+  width: 35px;
+  height: 35px;
   margin: 0 auto;
+}
+
+.day-number {
+  position: relative;
+  z-index: 2;
+  color: var(--text-dark); /* Цвет шампанского для контраста */
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+/* --- SVG СЕРДЕЧКО --- */
+.heart-marker {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 42px; /* Размер сердечка (чуть больше самой цифры) */
+  height: 42px;
+  fill: var(
+    --champagne-bg
+  ); /* Красивый золотой/терракотовый цвет из твоих переменных */
+  z-index: 1; /* Уходит под цифру */
+
+  /* Мягкая пульсация для эффекта "ВАУ" */
+  animation: heartPulse 2s ease-in-out infinite;
+}
+
+@keyframes heartPulse {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) scale(1.3);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.5);
+  }
 }
 
 .bottom-infinity {
@@ -1039,6 +1072,12 @@ body {
   }
 }
 
+@media (max-width: 340px) {
+  .rsvp-main-text {
+    font-size: 2rem;
+  }
+}
+
 .rsvp-names-curved {
   width: 100%;
   max-width: 300px;
@@ -1118,7 +1157,7 @@ body {
 
 .countdown-title {
   font-size: clamp(0.75rem, 2.5vw, 0.9rem);
-  color: #a9a9a9;
+  color: #f0e9dc;
   text-transform: uppercase;
   letter-spacing: 0.15em;
   text-align: center;
@@ -1138,6 +1177,8 @@ body {
   flex-direction: column;
   align-items: center;
   min-width: 55px;
+  overflow: hidden;
+  padding: 0 5px;
 }
 
 .countdown-value {
@@ -1147,11 +1188,25 @@ body {
   line-height: 1;
   font-weight: 400;
   letter-spacing: 0.05em;
+  display: inline-block;
+  animation: slideUpRewind 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  will-change: transform, opacity;
+}
+
+@keyframes slideUpRewind {
+  0% {
+    transform: translateY(80%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 .countdown-label {
   font-size: clamp(0.6rem, 2vw, 0.75rem);
-  color: #a9a9a9;
+  color: #f0e9dc;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   margin-top: 0.3rem;
