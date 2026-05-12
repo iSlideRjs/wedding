@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Upright:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baumans&display=swap');
 
 :root {
   --olive-bg: #6c755a;
@@ -1140,7 +1141,7 @@ body {
 }
 
 .countdown-value {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Baumans', system-ui;
   font-size: clamp(1.5rem, 5vw, 2.2rem);
   color: #f0e9dc;
   line-height: 1;

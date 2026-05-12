@@ -66,7 +66,7 @@ function RsvpBlock() {
               <hr className="date-line" />
             </div>
             <div className="rsvp-countdown-wrapper">
-              <p className="countdown-title">Осталось времени:</p>
+              <p className="countdown-title">Тот самый день через...</p>
 
               <div className="rsvp-countdown">
                 <div className="countdown-item">

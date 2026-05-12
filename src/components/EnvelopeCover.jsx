@@ -14,7 +14,6 @@ function EnvelopeCover({ onComplete, onOpenStart }) {
   }, []);
   const handleSealClick = () => {
     setIsOpening(true);
-    // 2. МГНОВЕННО сообщаем App.jsx, что процесс пошел (сайт должен появиться)
     if (onOpenStart) onOpenStart();
 
     setTimeout(() => {
