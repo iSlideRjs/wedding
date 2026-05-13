@@ -156,25 +156,20 @@ body {
 .day-number {
   position: relative;
   z-index: 2;
-  color: var(--text-dark); /* Цвет шампанского для контраста */
+  color: var(--text-dark);
   font-weight: bold;
   font-size: 1rem;
 }
 
-/* --- SVG СЕРДЕЧКО --- */
 .heart-marker {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 42px; /* Размер сердечка (чуть больше самой цифры) */
+  width: 42px;
   height: 42px;
-  fill: var(
-    --champagne-bg
-  ); /* Красивый золотой/терракотовый цвет из твоих переменных */
-  z-index: 1; /* Уходит под цифру */
-
-  /* Мягкая пульсация для эффекта "ВАУ" */
+  fill: var(--champagne-bg);
+  z-index: 1;
   animation: heartPulse 2s ease-in-out infinite;
 }
 
