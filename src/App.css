@@ -170,7 +170,12 @@ body {
   height: 42px;
   fill: var(--champagne-bg);
   z-index: 1;
-  animation: heartPulse 2s ease-in-out infinite;
+  will-change: transform;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  animation: heartPulse 2s ease-in-out infinite 0.5s;
 }
 
 @keyframes heartPulse {
