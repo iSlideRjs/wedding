@@ -59,7 +59,7 @@ function DressCodeBlock() {
           </div>
         </div>
         <div className="dress-divider-wrapper">
-          <hr className="dress-divider" />
+          <span className="dress-divider">&#8595;</span>
         </div>
 
         <FadeInSection>

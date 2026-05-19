@@ -953,13 +953,14 @@ body {
 .dress-divider-wrapper {
   display: flex;
   justify-content: center;
-  margin: 60px 0;
+  margin: 30px 0;
 }
 
 .dress-divider {
   width: 60px;
-  border-top: 1px solid #1a1a1a;
-  opacity: 0.2;
+  opacity: 0.8;
+  scale: calc(2);
+  color: #4a4e4d;
 }
 
 .section-rsvp-final {
