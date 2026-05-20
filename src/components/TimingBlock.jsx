@@ -57,6 +57,7 @@ function TimingBlock() {
             <div className="timeline-content">
               <span className="timeline-time">13:00</span>
               <span className="timeline-title">Фотосессия по городу</span>
+              <p class="event-desc">КУРЧАТОВ-КУРСК</p>
             </div>
             <div className="timeline-empty"></div>
           </div>
