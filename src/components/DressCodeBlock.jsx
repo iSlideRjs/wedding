@@ -95,6 +95,12 @@ function DressCodeBlock() {
                 ВМЕСТЕ МЫ СОЗДАДИМ ОДИН ПРЕКРАСНЫЙ И СИМВОЛИЧНЫЙ БУКЕТ.
               </p>
             </div>
+            <div className="line-mask">
+              <p className="reveal-text wishes-text">
+                ПРЕКРАСНОЙ АЛЬТЕРНАТИВОЙ БОЛЬШИМ БУКЕТАМ ТАКЖЕ СТАНЕТ БУТЫЛОЧКА
+                ХОРОШЕГО НАПИТКА НА ВАШ ВКУС.
+              </p>
+            </div>
           </div>
         </FadeInSection>
       </Container>

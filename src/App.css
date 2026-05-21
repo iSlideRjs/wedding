@@ -1147,6 +1147,9 @@ body {
 .wishes-content.animate-lines .line-mask:nth-child(4) .reveal-text {
   transition-delay: 0.8s;
 }
+.wishes-content.animate-lines .line-mask:nth-child(5) .reveal-text {
+  transition-delay: 1s;
+}
 
 .rsvp-countdown-wrapper {
   display: flex;
