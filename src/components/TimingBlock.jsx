@@ -101,7 +101,7 @@ function TimingBlock() {
 
           <div className="timeline-row-fixed left-side point-7">
             <div className="timeline-content">
-              <span className="timeline-time">23:00</span>
+              <span className="timeline-time">22:00</span>
               <span className="timeline-title">Завершение вечера</span>
               <p class="event-desc">ИЛИ НЕТ?</p>
             </div>
